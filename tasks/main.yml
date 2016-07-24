@@ -4,6 +4,10 @@
 - name: Get instance details
   include: get_instance_details.yml
 
-- name: Execute action based on extra var
+- name: Start instances
   include: start/start_instances.yml
   when: action == "start"
+
+- name: Stop instances
+  include: stop/stop_instances.yml
+  when: action == "stop"

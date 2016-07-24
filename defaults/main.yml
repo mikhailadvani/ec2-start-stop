@@ -1,4 +1,4 @@
 ---
 # defaults file for start_stop_ec2
 
-action: start
+action: "start"
