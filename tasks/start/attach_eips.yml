@@ -1,0 +1,4 @@
+
+- name: Associate elastic IPs
+  ec2_eip: device_id="{{item}}" reuse_existing_ip_allowed="{{reuse_existing_ip_allowed}}" in_vpc="{{reuse_existing_ip_allowed}}"
+  with_items: "{{instances_details.instances|map(attribute='id')|list|unique}}"

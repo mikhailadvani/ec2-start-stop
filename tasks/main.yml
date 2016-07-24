@@ -8,6 +8,14 @@
   include: start/start_instances.yml
   when: action == "start"
 
+- name: Attach elastic IPs to instances
+  include: start/attach_eips.yml
+  when: action == "start" and instances.elastic_ip == "yes"
+
+- name: Detach elastic IPs from instances
+  include: stop/detach_eips.yml
+  when: action == "stop" and instances.elastic_ip == "yes"
+
 - name: Stop instances
   include: stop/stop_instances.yml
   when: action == "stop"

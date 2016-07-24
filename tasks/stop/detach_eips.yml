@@ -1,0 +1,4 @@
+
+- name: Detach IPs
+  ec2_eip: device_id={{item}} release_on_disassociation={{release_on_disassociation}} state=absent
+  with_items: "{{instances_details.instances|map(attribute='id')|list|unique}}"
