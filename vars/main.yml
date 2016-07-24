@@ -4,4 +4,4 @@
 instances:
   tags:
     Environment: 'Dev'
-  elastic_ip: yes
+  elastic_ip: "yes"
