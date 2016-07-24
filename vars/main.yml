@@ -1,2 +1,5 @@
 ---
 # vars file for start_stop_ec2
+
+instance_tags:
+  Environment: 'Dev'

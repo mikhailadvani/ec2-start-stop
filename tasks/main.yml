@@ -1,2 +1,8 @@
 ---
 # tasks file for start_stop_ec2
+
+- name: Get instance details
+  include: get_instance_details.yml
+
+#- name: Execute action based on extra var
+#  include: "{{action}}.yml"

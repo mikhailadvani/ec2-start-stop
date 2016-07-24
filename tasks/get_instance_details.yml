@@ -1,0 +1,9 @@
+
+- name: Format instance selection tags for ec2_remote_facts
+  command: python roles/start_stop_ec2/files/build_tags_dict.py "{{instance_tags}}"
+  register: ec2_remote_tags
+
+- name: Get instance_ids
+  ec2_remote_facts:
+    filters: "{{ec2_remote_tags.stdout}}"
+  register: instances_details
