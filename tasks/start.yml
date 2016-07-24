@@ -1,9 +1,0 @@
-
-- name: Start instances
-  ec2:
-    instance_tags: "{{item}}"
-    state: running
-  with_items: "{{instance_tags}}"
-  register: instances
-
-- debug: var=instances
