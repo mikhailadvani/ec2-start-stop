@@ -45,6 +45,8 @@ galaxy_info:
   galaxy_tags:
   - aws
   - ec2
+  - development
+  - cloud
 
 
 dependencies: []
