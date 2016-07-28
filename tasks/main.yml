@@ -19,3 +19,9 @@
 - name: Stop instances
   include: stop/stop_instances.yml
   when: action == "stop"
+
+- name: Open access to my IP
+  include: start/open_access.yml
+  when: action == "start" and instances.security_group is defined
+
+
