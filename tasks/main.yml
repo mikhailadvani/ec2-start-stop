@@ -4,13 +4,13 @@
 - name: Get instance details
   include: get_instance_details.yml
 
-- name: Start instances
-  include: start/start_instances.yml
-  when: action == "start"
-
 - name: Attach elastic IPs to instances
   include: start/attach_eips.yml
   when: action == "start" and instances.elastic_ip == "yes"
+
+- name: Start instances
+  include: start/start_instances.yml
+  when: action == "start"
 
 - name: Detach elastic IPs from instances
   include: stop/detach_eips.yml
