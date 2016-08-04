@@ -5,14 +5,3 @@ instances:
   tags:
     Environment: 'Dev'
   elastic_ip: "yes"
-  security_group:
-    rules:
-    - proto: tcp
-      from_port: 80
-      to_port: 80
-      cidr_ip: "{{my_ip}}"
-    - proto: tcp
-      from_port: 443
-      to_port: 443
-      cidr_ip: "{{my_ip}}"
-    rules_egress: []

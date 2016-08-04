@@ -1,7 +1,0 @@
-- name: Get my ip
-  shell: "curl -s https://ipinfo.io/ip"
-  register: local_ip
-
-- name: Set fact for obtained ip
-  set_fact:
-    my_ip: "{{local_ip.stdout}}/32"
